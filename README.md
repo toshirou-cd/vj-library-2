@@ -1,11 +1,12 @@
-# Vietjet Asset Management - Frontend
-React webapp for Vietjet Asset Management. 
+# Vietjet Library Management - Frontend
+React webapp for Vietjet Library Management. 
 
 ## Members 
-- Lê Đức Thịnh 
-- Nguyễn Ngọc Quỳnh Như 
-- Phan Huỳnh Đăng Khoa 
-- Nguyễn Trần Minh Khoa 
+-Nguyễn Hoàng Anh 
+- Nguyễn Hải Long
+- Huỳnh Anh Khôi
+- Phạm Thiên Ân
+- Nguyễn Thành Thân
 
 ## With technical and business support from 
 - Mr. Phạm Công Thành 
