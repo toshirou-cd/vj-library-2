@@ -1,0 +1,74 @@
+@import '~@variables';
+
+@corner-radius: 15px;
+
+.sub-container {
+  height: 100vh;
+  .login-box {
+    // height: 600px;
+    background-color: @light-background-color;
+    overflow: hidden;
+    border-radius: @corner-radius;
+    box-shadow: 5px 5px 10px #e5b4aa70;
+    padding: 30px 20px !important;
+    .upper-part {
+      padding-bottom: 40px;
+      .logo {
+        margin-bottom: 20px;
+        .image-wrapper {
+          text-align: center;
+          height: 24px;
+          width: 100%;
+          margin-bottom: 10px;
+          .logo-img {
+            fill: @primary-text-color;
+          }
+        }
+      }
+      .title-text {
+        font-size: @regular-font-size;
+        margin: 0;
+        margin-bottom: 10px;
+        color: @primary-text-color;
+        &.align-center {
+          text-align: center;
+        }
+      }
+      .greeting-box {
+        margin-bottom: 20px;
+        .greeting {
+          color: @secondary-text-color;
+          &.title-text {
+            font-weight: bold;
+            align-self: flex-start;
+          }
+        }
+      }
+      .login-textfield {
+        width: 100%;
+        border-radius: @corner-radius;
+        height: 50px;
+        box-shadow: inset 5px 5px 15px #e5877570;
+        border: none;
+        padding: 0 15px;
+        color: @primary-text-color;
+        margin-bottom: 20px;
+        font-size: @small-font-size;
+        &::placeholder {
+          color: @primary-text-color;
+          opacity: 0.6;
+          font-size: @small-font-size;
+        }
+      }
+    }
+    .login-button {
+      width: 100%;
+      border-radius: @corner-radius;
+      height: 50px;
+      border: none;
+      background-color: @primary-button-color;
+      color: @white-text-color;
+      font-weight: bold;
+    }
+  }
+}

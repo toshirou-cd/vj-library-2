@@ -1,0 +1,108 @@
+@import '~@variables';
+
+.neumo-button {
+  border: none;
+  height: 45px !important;
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  padding: 12.5px;
+  &.light {
+    &:not(.highlighted) {
+      .image-wrapper > * {
+        fill: @black-text-color;
+        color: @black-text-color;
+      }
+      .label{
+        color: @black-text-color;
+      }
+    }
+    &.highlighted {
+      .image-wrapper > * {
+        fill: @white-text-color;
+        color: @white-text-color;
+      }
+      .label{
+        color: @white-text-color;
+      }
+    }
+    &.raised {
+      &.highlighted {
+        box-shadow: @neumo-button-light-highlighted-shadow;
+        background-color: @primary-button-color;
+      }
+      &:not(.highlighted) {
+        box-shadow: @neumo-button-shadow;
+        background-color: @light-background-color;
+      }
+    }
+  }
+  &.dark {
+    .image-wrapper > * {
+      fill: @white-text-color;
+      color: @white-text-color;
+    }
+    &.raised {
+      &.highlighted {
+        box-shadow: @neumo-button-dark-highlighted-shadow;
+        background-color: @primary-dark-button-color;
+      }
+      &:not(.highlighted) {
+        box-shadow: @neumo-button-dark-shadow;
+        background-color: @dark-background-color;
+      }
+    }
+  }
+  &.circular {
+    border-radius: 50%;
+  }
+  &.rectangular {
+    border-radius: @normal-border-radius;
+  }
+  &:not(.raised) {
+    background-color: transparent;
+    &:hover {
+      background-color: #e8e8e8;
+    }
+  }
+  &.with-left-icon&:not(.with-right-icon) {
+    .label {
+      padding: 0 0 0 15px;
+    }
+  }
+  &.with-right-icon&:not(.with-left-icon) {
+    .label {
+      padding: 0 15px 0 0;
+    }
+  }
+  &.with-left-icon&.with-right-icon {
+    .label {
+      padding: 0;
+    }
+  }
+  &:not(.with-label) {
+    width: 45px;
+  }
+  .image-wrapper {
+    height: @label-font-size;
+    width: @label-font-size;
+    &.chevron {
+      width: 10px;
+      &.left {
+        margin: 0 10px 0 0;
+      }
+      &.right {
+        margin: 0 0 0 10px;
+      }
+    }
+  }
+  .label {
+    font-size: @label-font-size;
+    line-height: @label-font-size;
+  }
+  &.raised{
+    .label{
+      font-weight: bold;
+    }
+  }
+}

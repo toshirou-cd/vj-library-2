@@ -1,0 +1,11 @@
+/*******************************
+     User Global Variables
+*******************************/
+
+@primaryColor: #344955;
+@secondaryColor: #F9AA33;
+@pageBackground: #F0F2F5;
+@fontName: 'Quicksand';
+@emSize: 18px;
+@fontSize: 18px;
+@importGoogleFonts: true;

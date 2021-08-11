@@ -1,0 +1,54 @@
+.SideBar{
+  position: fixed !important;
+  width:200px !important;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 30px;  
+  padding-bottom: 30px;
+}
+.Logo{
+  padding-bottom: 30px;
+}
+.MenuItem{
+    color: #E12127 !important;
+    display: flex !important;
+    flex-direction: row !important;
+    justify-content: center !important;
+    align-items: center;
+    margin: 0;
+}
+.MenuItem:hover {
+    cursor: pointer;
+    background-color: #ffa2a2 !important;
+  }
+  .MenuItem #icon {
+    flex: 40%;
+    display: grid;
+    place-items: center;
+    color: #E12127 !important;
+  }
+  .MenuItem #title {
+    flex : 60%;
+    font-weight: bold;
+    color: #E12127;
+    align-items: flex-start;
+  }
+
+  .Selected{
+    background-color:red !important ;
+    color:white !important;
+    font-weight: bold;
+  }
+  .Selected #title{
+    color:white !important;
+    font-weight: bold;
+  }
+  
+  .Selected:hover{
+    background-color: #E12127 !important ;
+    color: white !important;
+  }
+  
+
+  

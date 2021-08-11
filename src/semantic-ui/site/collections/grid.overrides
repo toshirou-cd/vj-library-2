@@ -1,0 +1,26 @@
+/*******************************
+         Site Overrides
+*******************************/
+
+.ui.grid.tight {
+  padding: unset;
+  margin: unset;
+}
+
+.ui.grid.tight > *{
+  padding: unset;
+  margin: unset;
+}
+
+.ui.grid.tight > .column:not(.row){
+  padding: unset;
+  margin: unset;
+}
+
+.column.fit-content, .ui.grid > .column.fit-content:not(.row), .ui.grid > .row > .column.fit-content{
+  width: fit-content;
+}
+
+.row.align-center{
+  align-content: center;
+}

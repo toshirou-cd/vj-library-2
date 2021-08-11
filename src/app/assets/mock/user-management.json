@@ -1,0 +1,42 @@
+[
+    {
+        "number" : 1,
+        "fullName" : "Như Nguyễn",
+        "accountName" : "nhunnq",
+        "role": "Warehouse Manager",
+        "status" : "Available",
+        "details" : "@app/assets/images/details_icon.png"
+    },
+    {
+        "number" : 2,
+        "fullName" : "Thịnh Lê",
+        "accountName" : "thinhld",
+        "role": "Staff",
+        "status" : "Available",
+        "details": "icon"
+    },
+    {
+        "number" : 3,
+        "fullName" : "Khoa Phan",
+        "accountName" : "khoaphd",
+        "role": "Staff",
+        "status" : "Disabled",
+        "details": "icon"
+    },
+    {
+        "number" : 4,
+        "fullName" : "Khoa Nguyễn",
+        "accountName" : "khoantm",
+        "role": "Admin",
+        "status" : "Availabled",
+        "details": "icon"
+    },
+    {
+        "number" : 5,
+        "fullName" : "Lan Anh",
+        "accountName" : "anhll",
+        "role": "Admin",
+        "status" : "Disabled",
+        "details": "icon"
+    }
+]

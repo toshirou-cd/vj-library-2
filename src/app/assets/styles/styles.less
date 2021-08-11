@@ -1,0 +1,124 @@
+@import '~@variables';
+
+* {
+  text-decoration: none;
+  margin: 0;
+  box-sizing: border-box;
+  color: @black-text-color;
+  transition: all 0.2s;
+  font-size: @regular-font-size;
+  font-weight: 400;
+  font-family: 'Quicksand';
+}
+
+body {
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1 {
+  margin: 0;
+}
+.page-container {
+  padding: @page-container-padding;
+}
+.content-floated-right {
+  > * {
+    float: right;
+  }
+}
+
+.image-wrapper {
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  > *, >*::before {
+    width: 100%;
+    height: 100%;
+    line-height: 100%;
+    font-size: 100%;
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+  }
+}
+
+//template index.css
+
+// /* #region global */
+// body {
+//   margin: 0;
+//   -webkit-font-smoothing: antialiased;
+//   -moz-osx-font-smoothing: grayscale;
+// }
+// * {
+//   font-weight: 400;
+// }
+// .d-none {
+//   display: none;
+// }
+// .m-0 {
+//   margin: 0 !important;
+// }
+// .m-t-2 {
+//   margin-top: 2px !important;
+// }
+// /* #endregion */
+
+// /* data-table action button */
+// .ui.top.popup {
+//   margin: 0 0 1.4em !important;
+// }
+
+// /* semantic form */
+// .ui.form textarea {
+//   font-family: inherit;
+// }
+// .ui.form:not(.tiny) .dropdown,
+// .ui.form:not(.tiny) input {
+//   min-height: 42px;
+// }
+
+// /* react-day-picker */
+// .DayPicker-Day {
+//   min-height: 44px !important;
+//   min-width: 44px !important;
+//   outline: none !important;
+//   border: 1px solid transparent !important;
+// }
+// .DayPicker-Month {
+//   border-collapse: separate !important;
+// }
+// .DayPicker-WeekNumber {
+//   outline: none !important;
+// }
+// .DayPicker-Day--hoverRange {
+//   background-color: #efefef !important;
+//   border-radius: 0 !important;
+// }
+// .DayPicker-Day--selectedRange {
+//   border-radius: 0 !important;
+//   background-color: #ffbb56 !important;
+//   border-top-color: #f9aa33 !important;
+//   border-bottom-color: #f9aa33 !important;
+//   border-left-color: #ffbb56 !important;
+//   border-right-color: #ffbb56 !important;
+//   color: white !important;
+// }
+// .DayPicker-Day--selectedRange:not(.DayPicker-Day--outside).DayPicker-Day--selected,
+// .DayPicker-Day--hoverRange:not(.DayPicker-Day--outside).DayPicker-Day--selected {
+//   border-radius: 0 !important;
+//   color: black !important;
+// }
+// .DayPicker-Day--hoverRange:hover {
+//   border-radius: 0 !important;
+// }
+// .DayPickerInput {
+//   width: 100%;
+// }
+
+// /* list-data */
+// .ui.celled.list > .item {
+//   padding: 0.5em !important;
+// }

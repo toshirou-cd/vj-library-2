@@ -1,0 +1,17 @@
+.RequestContainer {
+    width: 1300px !important;
+    padding-left: 120px;
+    display: flex;
+  }
+  .BorrowReqList{
+     min-height: 80vh !important;
+     height: fit-content;
+  }
+  
+  .ui.Button{
+    position: absolute !important;
+    bottom:20px;
+    right: 20px;
+  }
+  
+  
