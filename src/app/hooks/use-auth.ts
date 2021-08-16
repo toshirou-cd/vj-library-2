@@ -57,7 +57,7 @@ const useAuth = (): UseAuth => {
     password: string,
     remember: boolean,
   ): Promise<void> => {
-    const token = unwrapResult(await dispatch(li({ username, password })));
+    const token:any = unwrapResult(await dispatch(li({ username, password })));
     if (remember) {
       localStorage.setItem(TOKEN, JSON.stringify(token));
       localStorage.setItem(USER_ID, token.userId);

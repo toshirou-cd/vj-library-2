@@ -1,43 +1,40 @@
 import { Reducer } from "react";
-import { LOGIN_SUCCESS,LOGIN_FAIL,LOGOUT, UserAction, UserState } from "../types";
+import { LOGIN_SUCCESS,LOGIN_FAIL,LOGOUT, UserState, AuthDispatchType, IUser } from "../types";
 
 const user = JSON.parse(localStorage.getItem("user")|| "{}")
 
-const initialState  = {
-    user : null,
-    isLoggedIn : false,
+const tmp : IUser ={
+    avatar: "abc",
+    birth: "abc",
+    department :"abc"
+}
+const initialState:UserState = {
+    user : tmp,
+    isLoggedIn : user.data? true : false,
     role : null
 }
-
-export const AuthReducer = (state :UserState= initialState,action:UserAction):UserState => {
-    // const {type,payload} =action
-
+ export const AuthReducer = (state :UserState = initialState,action:AuthDispatchType)  => {
     switch(action.type) {
-        case LOGIN_SUCCESS : {
-            if(action.payload)
+        case LOGIN_SUCCESS : 
             return {
                 ...state,
-                user : action.payload.user,
+                user : tmp,
                 isLoggedIn : true,
                 role : action.payload.role
             }
-        }
-            break
         case LOGIN_FAIL :
             return {
-                ...state,
                 user :null,
                 isLoggedIn : false,
                 role : null
             }
         case LOGOUT :
             return {
-                ...state,
+                role : null,
                 isLoggedIn : false,
                 user:null
             }
         default :
             return state
-    }
-    return state
-}   
+        }
+};

@@ -1,3 +1,5 @@
+import { IBOOK } from "@app/models/book";
+
 //user reducer types
 export const LOGIN_SUCCESS = "LOGIN_SUCCESS";
 export const LOGIN_FAIL = "LOGIN_FAIL";
@@ -20,9 +22,40 @@ export type UserState = {
     role : string |null
 }
 
-export type UserAction = {
-    type: string,
-    payload? : UserState
-}
-export type DispatchType = ( args : UserAction) => UserAction
 
+export interface AuthSuccess {
+    type: typeof LOGIN_SUCCESS,
+    payload: {
+        user : IUser,
+        role :string
+    }
+}
+export interface AuthFail {
+    type: typeof LOGIN_FAIL,
+}
+export interface Logout {
+    type: typeof LOGOUT  
+}
+export type AuthDispatchType = AuthSuccess | AuthFail | Logout
+
+//// cart
+export const ADD_ITEM = "ADD ITEM"
+export const REMOVE_ITEM = "REMOVE ITEM"
+
+ export type CartState = {
+    books : IBOOK[] 
+}
+
+export interface AddItemToCart{
+    type: typeof ADD_ITEM,
+    payload : {
+        book : IBOOK | any
+    } 
+}
+export interface RemoveItemFromCart{
+    type : typeof REMOVE_ITEM,
+    payload : {
+        bookId :string
+    }
+}
+export type CartDispatchType = AddItemToCart | RemoveItemFromCart

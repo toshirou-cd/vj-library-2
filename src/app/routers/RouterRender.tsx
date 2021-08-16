@@ -21,6 +21,7 @@ const RouterRender: React.FC<RouterRenderProps> = (props) => {
       component: r.component,
       isPrivate: r.isPrivate,
       layout: r.layout,
+      navItems : r.navItems,
       routerPath: routerPath,
       redirectTo: r.redirectTo,
     };

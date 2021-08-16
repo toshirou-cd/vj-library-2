@@ -5,7 +5,8 @@ import RouterRender from '../RouterRender';
 import AdminRouter from './admin/AdminRouter';
 import AppLayout from '@app/components/app-layout';
 import PageNotFound from '@app/pages/PageNotFound';
-import PatronRouter from './patron/PatronRouter';
+import PatronRouter, { patronNavData } from './patron/PatronRouter';
+import LibrarianRouter, { librarianNavData } from './librarian/LibrarianRouter';
 
 const routes: HelperRoute[] = [
   {
@@ -26,6 +27,13 @@ const routes: HelperRoute[] = [
     component: PatronRouter,
     path: '/patron',
     layout : AppLayout,
+    navItems : patronNavData
+  },
+  {
+    component: LibrarianRouter,
+    path: '/librarian',
+    layout : AppLayout,
+    navItems : librarianNavData
   },
   {
     component: PageNotFound,

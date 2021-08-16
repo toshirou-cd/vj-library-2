@@ -1,25 +1,32 @@
+import { IBOOK } from "@app/models/book";
+import { RootStore } from "@app/store/myStore";
+import { UserState } from "@app/store/types";
 import React, {useState} from "react";
+import { shallowEqual, useSelector } from "react-redux";
 import { Container, Grid, Button, Icon, Pagination, Card, Image, Segment, Input } from 'semantic-ui-react';
 import BookItem from "./BookItem";
 import "./Books.css";
 import DetailBook from "./DetailBooks";
-import { BookType } from './MainLibrary'
 import './test.css'
 
 
 interface Props {
-    booklist : BookType[] | undefined
+    booklist : IBOOK[] 
 }
 
 const OnTrendingBookList:React.FC<Props> = ({booklist}) => {
 
     const [trigger, setTrigger] = useState<boolean>(false)
-    const [book, setBook] = useState<BookType>()
     
-   const handleClickItem = (clickedItem : BookType)  => {
+    const [book, setBook] = useState<any>()
+
+    const userState = useSelector((state:RootStore) => state.CartReducer)
+
+
+   const handleClickItem = (clickedItem )  => {
         setTrigger(true )
          setBook(clickedItem)
-        
+        console.log("cart State :" , userState.books)
     }
    
 
@@ -36,7 +43,7 @@ const OnTrendingBookList:React.FC<Props> = ({booklist}) => {
                 <Grid.Row className="GridRow">
                     {booklist?.map((book,key) => {
                         return (
-                            <BookItem book={book}  handleClickItem={handleClickItem}/>
+                            <BookItem key={key} book={book}  handleClickItem={handleClickItem}/>
                         )
                     })}
                 </Grid.Row>

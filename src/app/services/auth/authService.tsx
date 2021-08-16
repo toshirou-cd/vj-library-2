@@ -8,7 +8,9 @@ class authService {
         .post(API_URL + "/users/authenticate", {Username : username,Password:password})
         .then((res) => {
             if(res.data.data) {
-                localStorage.setItem("user",JSON.stringify(res.data))
+                localStorage.setItem("token",res.data.data)
+                localStorage.setItem("user",JSON.stringify(res.data.user))
+                axios.defaults.headers.common['Authorization'] = `Bearer ${res.data.data}`
             }
 
             return res.data
@@ -17,6 +19,7 @@ class authService {
 
     logout = () => {
         localStorage.removeItem("user")
+        localStorage.removeItem("token")
     }
 }
 
