@@ -1,10 +1,10 @@
+import { IBOOK } from '@app/models/book'
 import React, { useState } from 'react'
 import { Card, CardProps, Grid, Image} from 'semantic-ui-react'
-import { BookType } from './MainLibrary'
 
 interface Props{
-    handleClickItem : (clickedItem: BookType) => void;
-    book: BookType
+    handleClickItem : (clickedItem: IBOOK) => void;
+    book: IBOOK
     
 }
 

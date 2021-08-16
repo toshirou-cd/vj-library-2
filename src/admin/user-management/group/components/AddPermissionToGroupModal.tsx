@@ -1,6 +1,5 @@
 import React, { useMemo } from 'react';
 import { Modal } from 'semantic-ui-react';
-
 import { useFetchApi, useSelector } from '@app/hooks';
 import { FormField } from '@app/models/form-field';
 import SimpleForm from '@app/components/simple-form';

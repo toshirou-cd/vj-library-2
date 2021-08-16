@@ -39,7 +39,7 @@ const AddUserRoleToGroupModal: React.FC<Props> = (props) => {
         type: 'select',
         required: true,
         label: 'Tên vai trò',
-        options: roleList.map((r) => ({
+        options: roleList.map((r:any) => ({
           key: r.id,
           text: r.name,
           value: r.id,
@@ -52,7 +52,7 @@ const AddUserRoleToGroupModal: React.FC<Props> = (props) => {
         type: 'select',
         required: true,
         label: 'Tên người dùng',
-        options: userList.map((r) => ({
+        options: userList.map((r:any) => ({
           key: r.id,
           text: r.username,
           value: r.id,

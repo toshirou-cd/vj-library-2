@@ -1,10 +1,14 @@
-const authUrl = 'https://user.bakco.vn';
+const authUrl = 'http://libapi.hisoft.vn';
+export const apiUrl = 'http://libapi.hisoft.vn';
+
+  
+
 
 const apiLinks = {
   authentication: {
     token: 'abc',
   },
-  authorization: {
+  authorization: {  
     user: {
       get:'abc',
     }
@@ -66,6 +70,13 @@ const apiLinks = {
       },
     },
   },
+  getBookCover : `${apiUrl}/books/displayimg/`,
+  getReservationDetail :{
+    user : `${apiUrl}/bookreservations/getbookreservationdetailforuser`
+  },
+  request : {
+    borrowBookOnline : `${apiUrl}/bookreservations/addborrowbookonline`
+  }
 };
 
 export default apiLinks;

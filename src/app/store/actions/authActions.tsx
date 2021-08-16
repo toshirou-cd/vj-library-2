@@ -3,68 +3,56 @@ import { SET_MESSAGE,
     LOGIN_FAIL,
     LOGOUT, 
     UserState,
-    UserAction} from "../types";
+    AuthDispatchType,
+    IUser} from "../types";
 import authService from "../../services/auth/authService";
 import { Dispatch } from "react";
 import { Action, ActionCreator } from "redux";
 import { ThunkDispatch } from "redux-thunk";
-
-
 interface IActions {
     LOGIN_SUCCESS : string,
     LOGIN_FAIL : string,
-    
 }
 
-interface ILoginSuccess {
-    type : typeof LOGIN_SUCCESS,
-    payload:any
-}
-interface ILoginFailed {
-    type : typeof LOGIN_FAIL,
-    payload:any
-}
-interface ISetMessage {
-    type : typeof SET_MESSAGE,
-    payload:string
-}
-
-export const LoginSuccess:ActionCreator<UserAction> = (user : UserState,role:string)  => {
-    return {
+export const LoginSuccess = (user : IUser,role:string) => (dispath : Dispatch<AuthDispatchType>)  => {
+    dispath ({
         type : LOGIN_SUCCESS,
-        payload : user,role
+        payload: {
+            user : user,
+            role : role
     }
+})
 }
-export const LoginFail:ActionCreator<UserAction> = (user : UserState)  => {
-    return {
+export const LoginFail = () => (dispatch: Dispatch<AuthDispatchType>) => {
+    dispatch({
         type : LOGIN_FAIL
-    }
+    }) 
 }
 
-export const login = (username:string,password:string) => (dispatch:any ) => {
-    return authService.login(username,password)
-        .then((data) => {
-            dispatch({
-                type: LOGIN_SUCCESS,
-                payload:{user:data}
-            });
+// export const login = (username:string,password:string) => (dispatch:any ) => {
+//     return authService.login(username,password)
+//         .then((data) => {
+//             dispatch({
+//                 type: LOGIN_SUCCESS,
+//                 payload:{user:data}
+//             });
 
-            return Promise.resolve();
-        },
-            (error) => {
-                const message = (
-                    error.res && error.res.data &&
-                    error.res.data.message) || 
-                    error.message ||
-                    error.toString();
-            return Promise.reject();
-            }
-        )
+//             return Promise.resolve();
+//         },
+//             (error) => {
+//                 const message = (
+//                     error.res && error.res.data &&
+//                     error.res.data.message) || 
+//                     error.message ||
+//                     error.toString();
+//             return Promise.reject();
+//             }
+//         )
         
-}
-export const logout = () => (dispatch:any) => {
+// }
+export const logout = () => (dispatch:Dispatch<AuthDispatchType>) => {
     authService.logout();
     dispatch({
-      type: LOGOUT,
-    });
-  }
+      type: LOGOUT
+    })
+}

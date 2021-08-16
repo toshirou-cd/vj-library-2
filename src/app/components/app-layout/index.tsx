@@ -1,15 +1,24 @@
 import React, { ReactNode } from 'react';
 import TopBar from './top-bar/TopBar';
 import SideBar from './side-bar/SideBar';
+import { NavItem } from '@app/models/side-bar-tab-item';
 
-const AppLayout: React.FC<{ children: ReactNode; routerPath: string }> = (
+export interface AppLayoutProps {
+  children: ReactNode;
+  routerPath: string;
+  navItems?: NavItem[];
+}
+
+const AppLayout: React.FC<AppLayoutProps> = (
   props,
 ) => {
-  const { children } = props;
+  const { children,routerPath,navItems } = props;
 
   return (
     <>
-      <SideBar routerPath={props.routerPath} />
+      <SideBar routerPath={routerPath} 
+                items={navItems}
+              />
       <TopBar />
       <div className="page-container">{children}</div>
     </>

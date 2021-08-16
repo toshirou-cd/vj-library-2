@@ -31,7 +31,7 @@ const AddUserToRoleModal: React.FC<Props> = (props) => {
         type: 'select',
         required: true,
         label: 'Tên User',
-        options: userList.map((r) => ({
+        options: userList.map((r: { id: any; username: any; }) => ({
           key: r.id,
           text: r.username,
           value: r.id,

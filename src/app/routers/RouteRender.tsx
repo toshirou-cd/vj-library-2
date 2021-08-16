@@ -1,3 +1,4 @@
+import { NavItem } from '@app/models/side-bar-tab-item';
 import React, { ReactNode, useMemo } from 'react';
 import { Route, Redirect, match } from 'react-router-dom';
 
@@ -5,7 +6,12 @@ import { useAuth } from '../hooks';
 
 export interface RouteRenderProps {
   component?: React.FC<{ match: match }>;
-  layout?: React.FC<{ children: ReactNode; routerPath: string }>;
+  layout?: React.FC<{
+    children: ReactNode;
+    routerPath: string;
+    navItems?: NavItem[];
+  }>;
+  navItems?:NavItem[]
   path?: string;
   exact?: boolean;
   isPrivate?: boolean;
@@ -20,6 +26,7 @@ const renderRoute = (props: RouteRenderProps) => {
     path,
     exact,
     routerPath,
+    navItems,
     isPrivate = false,
     redirectTo,
   } = props;
@@ -42,7 +49,9 @@ const renderRoute = (props: RouteRenderProps) => {
           if ((isPrivate && isAuth) || !isPrivate) {
             if (Layout) {
               return (
-                <Layout routerPath={componentProps.match.path}>
+                <Layout routerPath={componentProps.match.path}
+                      navItems={navItems}
+                    >
                   <Component match={componentProps.match} />
                 </Layout>
               );

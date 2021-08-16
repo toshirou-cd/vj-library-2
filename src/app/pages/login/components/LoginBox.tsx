@@ -7,6 +7,8 @@ import authService from '@app/services/auth/authService';
 import { useDispatch } from 'react-redux';
 import { LoginFail, LoginSuccess } from '@app/store/actions/authActions';
 import { Button } from 'semantic-ui-react';
+import {decodeToken, isExpired}  from 'react-jwt'
+
 
 const LoginBox: React.FC = () => {
   const history = useHistory();
@@ -15,7 +17,7 @@ const LoginBox: React.FC = () => {
   const [loading, setLoading] = useState<boolean>(false)
 
   const dispatch:Dispatch<any> = useDispatch()
-
+  
 
   const handleLogin = (e: React.SyntheticEvent) => {
     e.preventDefault();
@@ -23,14 +25,17 @@ const LoginBox: React.FC = () => {
     
       authService.login(username!,password!).then(
         (data) => {
+          const token = data.data
+          const decodedToken = decodeToken(token)
           dispatch(LoginSuccess(data.user,"user"))
-          console.log("ok" , data)
+          console.log("ok" , data.user , "token is expired :" ,decodedToken)
+
           history.push("/patron")
         }
         ).catch((err) => {
           dispatch(LoginFail())
           setLoading(false)
-          console.log("login fail", username)
+          console.log("login fail",err )
         })
   };
 
@@ -84,4 +89,5 @@ export default LoginBox;
 function setLoading(arg0: boolean) {
   throw new Error('Function not implemented.');
 }
+
 
